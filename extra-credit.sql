@@ -5,9 +5,10 @@ endtime TIME
 );
 
 INSERT INTO timeslots ( starttime, endtime) VALUES
-('11:30:00', '12:20:00'),
-( '8:30:00', '10:20:00'),
-('3:30:00', '5:20:00')
+('8:30:00', '9:20:00', 1),
+( '9:30:00', '10:20:00', 2),
+('2:30:00', '4:20:00', 3)
+('09:00:00', '11:00:00', 4);
 ON CONFLICT DO NOTHING;
 
 CREATE TABLE rooms_new (
@@ -33,6 +34,7 @@ UNIQUE (roomid, timeslotid)
 );
 
 INSERT INTO schedule (coursecode, roomid, timeslotid) VALUES
-('CSE 122', 1, 2),
+('MATH 126', 1, 1),
 ('CSE 373', 2, 1),
 ('ENGL 121', 3, 3);
+('INFO330A', 2, 4);
